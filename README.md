@@ -126,7 +126,7 @@ var socket = io('ws://yourdomain.com', {transports: ['websocket']});
     channel.Emit("my event", MyEventData{"my data"})
 
     //or you can send ack to client and get result back
-    result, err := channel.Ack("my custom ack", MyEventData{"ack data"}, time.Second * 5)
+    result, err := channel.Ack("my custom ack", time.Second * 5, MyEventData{"ack data"} )
 
     //you can broadcast to all clients
     server.BroadcastToAll("my event", MyEventData{"broadcast"})

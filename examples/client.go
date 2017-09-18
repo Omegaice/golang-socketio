@@ -21,7 +21,7 @@ type Message struct {
 
 func sendJoin(c *gosocketio.Client) {
 	log.Println("Acking /join")
-	result, err := c.Ack("/join", Channel{"main"}, time.Second*5)
+	result, err := c.Ack("/join", time.Second*5, Channel{"main"})
 	if err != nil {
 		log.Fatal(err)
 	} else {
